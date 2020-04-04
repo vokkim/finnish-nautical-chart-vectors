@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="29px" viewBox="0 0 15 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 43</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-43" transform="translate(0.000000, 1.000000)">
+            <path d="M5,18 L8.74753125,26.1386606 C10.0522729,27.1490522 11.3286935,27.2705162 12.5767931,26.5030526 C13.8248927,25.735589 14.2520896,24.6437688 13.8583836,23.2275919 L5,18 Z" id="Path" stroke="#000000" fill="#FED426"></path>
+            <g id="Group-42">
+                <g id="Group-20" transform="translate(1.500000, 5.000000)">
+                    <g id="Group-5">
+                        <g id="Group-4" transform="translate(0.000000, 10.000000)" stroke="#000000">
+                            <path d="M0.5,1.5 L3,1.5" id="Line-8" stroke-linecap="square"></path>
+                            <path d="M6.5,1.5 L8.5,1.5" id="Line-8" stroke-linecap="square"></path>
+                            <circle id="Oval" cx="4.5" cy="1.5" r="1.5"></circle>
+                        </g>
+                        <polygon id="Rectangle" fill="#000000" points="2 0 7 0 7 11.5 4.5 10 2 11.5"></polygon>
+                    </g>
+                </g>
+                <path d="M1.5,3.5 C2.5,2.21056203 4,1.56584305 6,1.56584305 C8,1.56584305 9.5,2.21056203 10.5,3.5" id="Line-11" stroke="#000000" stroke-linecap="square"></path>
+                <path d="M1.5,3.5 L0,2.5" id="Line-12" stroke="#000000" stroke-linecap="square"></path>
+                <path d="M3.69317833,1.67967948 L2.41487518,0.928989998" id="Line-12" stroke="#000000" stroke-linecap="square" transform="translate(3.054027, 1.304335) rotate(27.000000) translate(-3.054027, -1.304335) "></path>
+                <path d="M9.75973452,1.37855025 L8.75265383,0.733364709" id="Line-12" stroke="#000000" stroke-linecap="square" transform="translate(9.256194, 1.055957) scale(-1, 1) rotate(27.000000) translate(-9.256194, -1.055957) "></path>
+                <path d="M11.5,3.5 L10,2.5" id="Line-12" stroke="#000000" stroke-linecap="square" transform="translate(11.000000, 3.000000) scale(-1, 1) translate(-11.000000, -3.000000) "></path>
+                <path d="M6,1.56584305 L6,0.0455076638" id="Line-13" stroke="#000000" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

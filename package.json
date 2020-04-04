@@ -1,0 +1,41 @@
+{
+  "name": "finnish-nautical-chart-vectors",
+  "description": "",
+  "version": "0.0.1",
+  "author": {
+    "name": "Mikko Vesikkala",
+    "email": "mikko.vesikkala@iki.fi",
+    "url": "https://github.com/vokkim/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@turf/buffer": "5.1.5",
+    "@turf/line-overlap": "6.0.2",
+    "@turf/line-split": "5.1.5",
+    "axios": "0.19.2",
+    "express": "4.17.1",
+    "fast-csv": "4.1.3",
+    "geojson": "0.5.0",
+    "mapshaper": "0.4.163",
+    "ol": "6.3.0",
+    "ol-mapbox-style": "6.1.1",
+    "pg": "8.0.0",
+    "shelljs": "0.8.3",
+    "sql-template-strings": "2.2.2",
+    "tileserver-gl": "3.0.0",
+    "tilestrata": "2.1.3"
+  },
+  "devDependencies": {
+    "parcel": "1.12.4"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "watch-client": "parcel client/{ol,index,mapbox}.html",
+    "tileserver": "tileserver-gl --config tileserver-config.json --no-cors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vokkim/finnish-nautical-chart-vectors.git"
+  },
+  "homepage": "https://github.com/vokkim/finnish-nautical-chart-vectors"
+}

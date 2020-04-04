@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="22px" viewBox="0 0 17 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 41</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-41" transform="translate(1.000000, 0.000000)" stroke="#000000">
+            <g id="Group-40" transform="translate(0.000000, 0.769471)">
+                <g id="Group-39" transform="translate(0.000000, 9.230529)">
+                    <g id="Group-4" transform="translate(0.111973, 0.545976)">
+                        <path d="M0.282079422,1.5 L6,1.5" id="Line-8" stroke-linecap="square"></path>
+                        <path d="M9.5,1.5 L14.6771421,1.5" id="Line-8" stroke-linecap="square"></path>
+                        <circle id="Oval" cx="7.5" cy="1.5" r="1.5"></circle>
+                    </g>
+                </g>
+                <polyline id="Path-4" points="3.25301299 11.2305285 4.42177594 0 10.7371999 0 12.2005443 11.2305285"></polyline>
+            </g>
+            <g id="Group-40" transform="translate(0.000000, 0.769471)">
+                <g id="Group-39" transform="translate(0.000000, 9.230529)">
+                    <g id="Group-4" transform="translate(0.111973, 0.545976)">
+                        <path d="M0.282079422,1.5 L6,1.5" id="Line-8" stroke-linecap="square"></path>
+                        <path d="M9.5,1.5 L14.6771421,1.5" id="Line-8" stroke-linecap="square"></path>
+                        <circle id="Oval" cx="7.5" cy="1.5" r="1.5"></circle>
+                    </g>
+                </g>
+                <polyline id="Path-4" points="3.25301299 11.2305285 4.42177594 0 10.7371999 0 12.2005443 11.2305285"></polyline>
+            </g>
+            <path d="M6,13 L9.74753125,20.234365 C11.0522729,21.1324908 12.3286935,21.2404588 13.5767931,20.558269 C14.8248927,19.8760791 15.2520896,18.9055722 14.8583836,17.6467483 L6,13 Z" id="Path" fill="#FED426"></path>
+        </g>
+    </g>
+</svg>

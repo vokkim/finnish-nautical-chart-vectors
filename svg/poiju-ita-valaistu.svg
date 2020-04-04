@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="41px" viewBox="0 0 17 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 19</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-19" transform="translate(0.000000, -1.000000)">
+            <path d="M5,32 L8.74753125,40.1386606 C10.0522729,41.1490522 11.3286935,41.2705162 12.5767931,40.5030526 C13.8248927,39.735589 14.2520896,38.6437688 13.8583836,37.2275919 L5,32 Z" id="Path" stroke="#000000" fill="#FED426"></path>
+            <g id="Group-17">
+                <g id="Group-13">
+                    <g id="Group-12" transform="translate(0.000000, 6.196356)">
+                        <g id="Group-9" stroke="#000000">
+                            <g id="Group-4">
+                                <path d="M0.5,24.5 L5,24.5" id="Line-8" stroke-linecap="square"></path>
+                                <path d="M8.5,24.5 L12.5,24.5" id="Line-8" stroke-linecap="square"></path>
+                                <circle id="Oval" cx="6.5" cy="24.5" r="1.5"></circle>
+                                <path d="M13.5,0.303644137 L6.5,22.5" id="Line-7" stroke-linecap="square"></path>
+                            </g>
+                        </g>
+                        <polygon id="Path-2" fill="#000000" points="5.48271994 17.4624197 9.27098787 6.45474825 13 7.51770028 10.5 18.7173562 11.5 24.2340472 8 24.2340472 7.43085971 23 5.94006706 22.6760267 4.27545115 24.2340472 1.13801613 24.2340472"></polygon>
+                    </g>
+                    <g id="Group-16" transform="translate(13.500000, 7.500000) rotate(-180.000000) translate(-13.500000, -7.500000) translate(8.000000, 0.000000)" fill="#000000">
+                        <polygon id="Triangle" transform="translate(5.014321, 11.151312) rotate(-165.000000) translate(-5.014321, -11.151312) " points="5.01432074 8.15131151 8.51432074 14.1513115 1.51432074 14.1513115"></polygon>
+                        <polygon id="Triangle" transform="translate(6.826054, 4.389831) rotate(-345.000000) translate(-6.826054, -4.389831) " points="6.82605405 1.38983073 10.3260541 7.38983073 3.32605405 7.38983073"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

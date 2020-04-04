@@ -1,0 +1,1508 @@
+{
+    "bearing": 0,
+    "center": [
+        23.294585127820937,
+        60.69159208275261
+    ],
+    "created": "2020-02-14T11:22:36.746Z",
+    "draft": false,
+    "glyphs": "/assets/{fontstack}/{range}.pbf",
+    "id": "ck6m31uew0s3d1jo1do4mhdto",
+    "layers": [
+
+        {
+            "id": "ground",
+            "layout": {},
+            "minzoom": 6,
+            "paint": {
+                "fill-antialias": false,
+                "fill-color": "#f9efcb"
+            },
+            "source": "composite",
+            "source-layer": "maa",
+            "type": "fill"
+        },
+        {
+            "id": "syvyysalueet",
+            "layout": {},
+            "minzoom": 1,
+            "paint": {
+                "fill-antialias": false,
+                "fill-color": [
+                    "case",
+                    [
+                        "match",
+                        [
+                            "get",
+                            "typedepr"
+                        ],
+                        [
+                            "3"
+                        ],
+                        true,
+                        false
+                    ],
+                    "#efeaf4",
+                    [
+                        "match",
+                        [
+                            "get",
+                            "water"
+                        ],
+                        [
+                            "white"
+                        ],
+                        true,
+                        false
+                    ],
+                    "#ffffff",
+                    [
+                        "match",
+                        [
+                            "get",
+                            "water"
+                        ],
+                        [
+                            "blue"
+                        ],
+                        true,
+                        false
+                    ],
+                    "#e5f1fa",
+                    "#e707df"
+                ]
+            },
+            "source": "composite",
+            "source-layer": "syvyysalueet",
+            "type": "fill"
+        },
+        {
+            "id": "ground-lowres",
+            "layout": {},
+            "minzoom": 1,
+            "maxzoom": 6,
+            "paint": {
+                "fill-antialias": false,
+                "fill-color": "#f9efcb"
+            },
+            "source": "composite",
+            "source-layer": "maa",
+            "type": "fill"
+        },
+        {
+            "id": "Syvyyskayra10m",
+            "layout": {},
+            "minzoom": 1,
+            "paint": {
+                "line-color": "#1b9ada"
+            },
+            "source": "composite",
+            "source-layer": "syvyyskayra10m",
+            "type": "line"
+        },
+        {
+            "id": "Syvyyskayra5m",
+            "layout": {},
+            "minzoom": 1,
+            "paint": {
+                "line-color": "#1b9ada",
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    10,
+                    [
+                        "literal",
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    13,
+                    [
+                        "literal",
+                        [
+                            5,
+                            5
+                        ]
+                    ],
+                    15,
+                    [
+                        "literal",
+                        [
+                            10,
+                            7
+                        ]
+                    ]
+                ]
+            },
+            "source": "composite",
+            "source-layer": "syvyyskayra5m",
+            "type": "line"
+        },
+        {
+            "id": "Syvyyskayra3m",
+            "layout": {},
+            "minzoom": 1,
+            "paint": {
+                "line-color": "#1b9ada",
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            1,
+                            1
+                        ]
+                    ],
+                    13,
+                    [
+                        "literal",
+                        [
+                            1,
+                            1
+                        ]
+                    ],
+                    15,
+                    [
+                        "literal",
+                        [
+                            2,
+                            2
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            3,
+                            3
+                        ]
+                    ]
+                ]
+            },
+            "source": "composite",
+            "source-layer": "syvyyskayra3m",
+            "type": "line"
+        },
+        {
+            "id": "Syvyyskayra text",
+            "layout": {
+                "text-field": [
+                    "to-string",
+                    [
+                        "get",
+                        "valdco"
+                    ]
+                ],
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    6,
+                    22,
+                    32
+                ]
+            },
+            "minzoom": 11,
+            "paint": {
+                "text-color": "hsl(199, 79%, 50%)",
+                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-halo-width": 2
+            },
+            "source": "composite",
+            "source-layer": "syvyyskayra10m",
+            "type": "symbol"
+        },
+        {
+            "id": "syvyyspiste",
+            "layout": {
+                "text-field": [
+                    "to-string",
+                    [
+                        "get",
+                        "depth"
+                    ]
+                ],
+                "text-font": [
+                    "Open Sans Italic"
+                ],
+                "text-padding": 10,
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    8,
+                    22,
+                    22
+                ]
+            },
+            "minzoom": 10.5,
+            "source": "composite",
+            "source-layer": "syvyyspiste",
+            "type": "symbol"
+        },
+        {
+            "filter": [
+                "match",
+                [
+                    "get",
+                    "type"
+                ],
+                [
+                    "hylky-syvyys-tuntematon",
+                    "hylky-syvyys-tunnettu",
+                    "hylky-pinnalla"
+                ],
+                true,
+                false
+            ],
+            "id": "hylky",
+            "layout": {
+                "icon-allow-overlap": true,
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "hylky-syvyys-tuntematon"
+                    ],
+                    "hylky2",
+                    [
+                        "hylky-syvyys-tunnettu",
+                        "hylky-pinnalla"
+                    ],
+                    "hylky1",
+                    ""
+                ],
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.1,
+                    16,
+                    1
+                ],
+                "text-anchor": "bottom",
+                "text-field": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "hylky-syvyys-tunnettu"
+                    ],
+                    [
+                        "to-string",
+                        [
+                            "get",
+                            "teksti"
+                        ]
+                    ],
+                    ""
+                ],
+                "text-offset": [
+                    0,
+                    -0.5
+                ],
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    12,
+                    16,
+                    15,
+                    20
+                ]
+            },
+            "minzoom": 1,
+            "paint": {},
+            "source": "composite",
+            "source-layer": "hylky",
+            "type": "symbol"
+        },
+        {
+            "id": "ankkuripaikka",
+            "layout": {
+                "icon-image": "ankkuri",
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    11,
+                    0.2,
+                    17,
+                    0.4
+                ]
+            },
+            "minzoom": 1,
+            "paint": {},
+            "source": "composite",
+            "source-layer": "ankkuripaikka",
+            "type": "symbol"
+        },
+        {
+            "id": "rantarakenteet",
+            "layout": {},
+            "minzoom": 1,
+            "paint": {
+                "line-color": "hsl(0, 0%, 0%)",
+                "line-width": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    12,
+                    1,
+                    22,
+                    3
+                ]
+            },
+            "source": "composite",
+            "source-layer": "rantarakenteet",
+            "type": "line"
+        },
+        {
+            "id": "Vaylat green bg",
+            "layout": {
+                "line-join": "bevel"
+            },
+            "paint": {
+                "line-color": "hsla(77, 44%, 69%, 0.62)",
+                "line-width": 8
+            },
+            "source": "composite",
+            "source-layer": "vaylat-veneilyn-runkovayla",
+            "type": "line"
+        },
+        {
+            "id": "vaylaalueet",
+            "layout": {},
+            "paint": {
+                "fill-color": "hsla(0, 0%, 61%, 0.28)",
+                "fill-outline-color": "hsla(0, 0%, 0%, 0)"
+            },
+            "source": "composite",
+            "source-layer": "vaylaalueet",
+            "type": "fill"
+        },
+        {
+            "id": "Vesikivi",
+            "layout": {
+                "icon-allow-overlap": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    false,
+                    13,
+                    true,
+                    22,
+                    true
+                ],
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "kohdeluokka"
+                    ],
+                    [
+                        38511
+                    ],
+                    "kari1",
+                    [
+                        38512
+                    ],
+                    "2",
+                    [
+                        38513
+                    ],
+                    "kari3",
+                    ""
+                ],
+                "icon-offset": [
+                    0,
+                    0
+                ],
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.01,
+                    22,
+                    2
+                ],
+                "text-allow-overlap": true,
+                "text-size": 36
+            },
+            "minzoom": 1,
+            "paint": {
+                "icon-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.5,
+                    12,
+                    1
+                ],
+                "text-color": "hsl(0, 100%, 60%)"
+            },
+            "source": "composite",
+            "source-layer": "vesikivi",
+            "type": "symbol"
+        },
+        {
+            "id": "turvalaitteet-viitatpoijut",
+            "layout": {
+                "icon-allow-overlap": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    false,
+                    12,
+                    true
+                ],
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "Viitta-Etela--KELLUVA-"
+                    ],
+                    "viitta-etela",
+                    [
+                        "Viitta-Pohjois--KELLUVA-"
+                    ],
+                    "viitta-pohjoinen",
+                    [
+                        "Viitta-Itä--KELLUVA-"
+                    ],
+                    "viitta-ita",
+                    [
+                        "Viitta-Lansi--KELLUVA-"
+                    ],
+                    "viitta-lansi",
+                    [
+                        "Viitta-Itä--KELLUVA-Valaistu"
+                    ],
+                    "viitta-ita-valaistu",
+                    [
+                        "Viitta-Pohjois--KELLUVA-Valaistu"
+                    ],
+                    "viitta-pohjois-valaistu",
+                    [
+                        "Viitta-Etela--KELLUVA-Valaistu"
+                    ],
+                    "viitta-etela-valaistu",
+                    [
+                        "Viitta-Lansi--KELLUVA-Valaistu"
+                    ],
+                    "viitta-lansi-valaistu",
+                    [
+                        "Viitta-Vasen--KELLUVA-Valaistu"
+                    ],
+                    "viitta-vasen-valaistu",
+                    [
+                        "Viitta-Oikea--KELLUVA-Valaistu"
+                    ],
+                    "viitta-oikea-valaistu",
+                    [
+                        "Viitta-Oikea--KELLUVA-"
+                    ],
+                    "viitta-oikea",
+                    [
+                        "Viitta-Vasen--KELLUVA-"
+                    ],
+                    "viitta-vasen",
+                    [
+                        "Poiju-Vasen--KELLUVA-"
+                    ],
+                    "poiju-vasen",
+                    [
+                        "Poiju-Oikea--KELLUVA-"
+                    ],
+                    "poiju-oikea",
+                    [
+                        "Poiju-Vasen--KELLUVA-Valaistu"
+                    ],
+                    "poiju-vasen-valaistu",
+                    [
+                        "Poiju-Oikea--KELLUVA-Valaistu"
+                    ],
+                    "poiju-oikea-valaistu",
+                    [
+                        "Poiju-Itä--KELLUVA-"
+                    ],
+                    "poiju-ita",
+                    [
+                        "Poiju-Itä--KELLUVA-Valaistu"
+                    ],
+                    "poiju-ita-valaistu",
+                    [
+                        "Poiju-Lansi--KELLUVA-"
+                    ],
+                    "poiju-lansi",
+                    [
+                        "Poiju-Lansi--KELLUVA-Valaistu"
+                    ],
+                    "poiju-lansi-valaistu",
+                    [
+                        "Poiju-Etela--KELLUVA-"
+                    ],
+                    "poiju-etela",
+                    [
+                        "Poiju-Etela--KELLUVA-Valaistu"
+                    ],
+                    "poiju-etela-valaistu",
+                    [
+                        "Poiju-Pohjois--KELLUVA-"
+                    ],
+                    "poiju-pohjois",
+                    [
+                        "Poiju-Pohjois--KELLUVA-Valaistu"
+                    ],
+                    "poiju-pohjois-valaistu",
+                    [
+                        "Viitta-Turvavesimerkki--KELLUVA-"
+                    ],
+                    "turvavesimerkki",
+                    [
+                        "Viitta-Karimerkki--KELLUVA-"
+                    ],
+                    "karimerkki",
+                    [
+                        "Reunamerkki-Karimerkki--KIINTE-"
+                    ],
+                    "reunamerkki-karimerkki",
+                    ""
+                ],
+                "icon-offset": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "Viitta-Vasen--KELLUVA-",
+                        "Viitta-Oikea--KELLUVA-"
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -12
+                        ]
+                    ],
+                    [
+                        "Viitta-Pohjois--KELLUVA-",
+                        "Viitta-Etela--KELLUVA-",
+                        "Viitta-Lansi--KELLUVA-",
+                        "Viitta-Itä--KELLUVA-"
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -13
+                        ]
+                    ],
+                    [
+                        "Viitta-Turvavesimerkki--KELLUVA-"
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -14
+                        ]
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -7
+                        ]
+                    ]
+                ],
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.3,
+                    16,
+                    2
+                ]
+            },
+            "minzoom": 1,
+            "paint": {
+                "icon-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.4,
+                    12,
+                    1
+                ]
+            },
+            "source": "composite",
+            "source-layer": "turvalaitteet",
+            "type": "symbol"
+        },
+        {
+            "id": "turvalaitteet-reunamerkit",
+            "layout": {
+                "icon-allow-overlap": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    false,
+                    12,
+                    true
+                ],
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "Reunamerkki-Oikea--KIINTE-Valaistu"
+                    ],
+                    "reunamerkki-oikea-valaistu",
+                    [
+                        "Reunamerkki-Oikea--KIINTE-"
+                    ],
+                    "reunamerkki-oikea",
+                    [
+                        "Reunamerkki-Vasen--KIINTE-"
+                    ],
+                    "reunamerkki-vasen",
+                    [
+                        "Reunamerkki-Vasen--KIINTE-Valaistu"
+                    ],
+                    "reunamerkki-vasen-valaistu",
+                    [
+                        "Reunamerkki-Itä--KIINTE-Valaistu"
+                    ],
+                    "reunamerkki-ita-valaistu",
+                    [
+                        "Reunamerkki-Lansi--KIINTE-"
+                    ],
+                    "reunamerkki-lansi",
+                    [
+                        "Reunamerkki-Lansi--KIINTE-Valaistu"
+                    ],
+                    "reunamerkki-lansi-valaistu",
+                    [
+                        "Reunamerkki-Etela--KIINTE-"
+                    ],
+                    "reunamerkki-etela",
+                    [
+                        "Reunamerkki-Etela--KIINTE-Valaistu"
+                    ],
+                    "reunamerkki-etela-valaistu",
+                    [
+                        "Reunamerkki-Pohjois--KIINTE-"
+                    ],
+                    "reunamerkki-pohjois",
+                    [
+                        "Reunamerkki-Pohjois--KIINTE-Valaistu"
+                    ],
+                    "reunamerkki-pohjois-valaistu",
+                    [
+                        "Poiju-Erikoismerkki--KELLUVA-"
+                    ],
+                    "poiju-erikoismerkki",
+                    [
+                        "Viitta-Erikoismerkki--KELLUVA-Valaistu"
+                    ],
+                    "viitta-erikoismerkki-valaistu",
+                    [
+                        "Poiju-Erikoismerkki--KELLUVA-Valaistu"
+                    ],
+                    "poiju-erikoismerkki-valaistu",
+                    [
+                        "Viitta-Erikoismerkki--KELLUVA-"
+                    ],
+                    "viitta-erikoismerkki-valaistu",
+                    ""
+                ],
+                "icon-offset": [
+                    0,
+                    -8
+                ],
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.3,
+                    16,
+                    2
+                ]
+            },
+            "minzoom": 1,
+            "paint": {
+                "icon-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.4,
+                    12,
+                    1
+                ]
+            },
+            "source": "composite",
+            "source-layer": "turvalaitteet",
+            "type": "symbol"
+        },
+        {
+            "id": "turvalaitteet-muut",
+            "layout": {
+                "icon-allow-overlap": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    false,
+                    11,
+                    true
+                ],
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "Linjamerkki-Tuntematon--KIINTE-",
+                        "Linjamerkki---KIINTE-"
+                    ],
+                    "linjataulu",
+                    [
+                        "Linjamerkki---KIINTE-Valaistu"
+                    ],
+                    "linjataulu-valaistu",
+                    [
+                        "Kummeli--Levykummeli-KIINTE-",
+                        "Kummeli--Reunakummeli-KIINTE-",
+                        "Muu--Reunakummeli-KIINTE-",
+                        "kummeli"
+                    ],
+                    "kummeli-levy",
+                    [
+                        "Kummeli---KIINTE-",
+                        "Kummeli-Tuntematon--KIINTE-"
+                    ],
+                    "kummeli-kasa",
+                    [
+                        "Muu--Radiomasto-KIINTE-Valaistu"
+                    ],
+                    "radiomasto",
+                    [
+                        "Tunnusmajakka---KIINTE-"
+                    ],
+                    "tunnusmajakka",
+                    [
+                        "Tunnusmajakka---KIINTE-Valaistu"
+                    ],
+                    "tunnusmajakka-valaistu",
+                    [
+                        "Tutkamerkki---KIINTE-",
+                        "Tutkamerkki-Tuntematon--KIINTE-"
+                    ],
+                    "tutkamerkki",
+                    [
+                        "Tutkamerkki---KIINTE-Valaistu"
+                    ],
+                    "tutkamerkki-valaistu",
+                    [
+                        "Merimajakka---KIINTE-Valaistu"
+                    ],
+                    "merimajakka",
+                    [
+                        "Suuntaloisto---KIINTE-Valaistu"
+                    ],
+                    "loisto",
+                    [
+                        "Sektoriloisto---KIINTE-Valaistu",
+                        "Apuloisto---KIINTE-Valaistu",
+                        "Apuloisto-Tuntematon--KIINTE-Valaistu"
+                    ],
+                    "sektoriloisto",
+                    ""
+                ],
+                "icon-offset": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "Linjamerkki-Tuntematon--KIINTE-",
+                        "Linjamerkki---KIINTE-"
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -6
+                        ]
+                    ],
+                    [
+                        "Linjamerkki---KIINTE-Valaistu"
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -1
+                        ]
+                    ],
+                    [
+                        "Tunnusmajakka---KIINTE-"
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -4
+                        ]
+                    ],
+                    [
+                        "Tutkamerkki-Tuntematon--KIINTE-",
+                        "Tutkamerkki---KIINTE-"
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -7
+                        ]
+                    ],
+                    [
+                        "Tutkamerkki---KIINTE-Valaistu"
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            -2
+                        ]
+                    ],
+                    [
+                        "literal",
+                        [
+                            0,
+                            0
+                        ]
+                    ]
+                ],
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.3,
+                    16,
+                    2
+                ]
+            },
+            "minzoom": 1,
+            "paint": {
+                "icon-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    0.4,
+                    12,
+                    1
+                ]
+            },
+            "source": "composite",
+            "source-layer": "turvalaitteet",
+            "type": "symbol"
+        },
+        {
+            "id": "Vaylat primary",
+            "layout": {
+                "line-miter-limit": 0
+            },
+            "paint": {
+                "line-color": "hsl(0, 0%, 33%)",
+                "line-width": 2
+            },
+            "source": "composite",
+            "source-layer": "vaylat-primary",
+            "type": "line"
+        },
+        {
+            "id": "Vaylat secondary",
+            "layout": {
+                "line-miter-limit": 0
+            },
+            "minzoom": 6,
+            "paint": {
+                "line-color": "hsl(0, 0%, 33%)",
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    7,
+                    0.4,
+                    10,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    6,
+                    1,
+                    10,
+                    2
+                ]
+            },
+            "source": "composite",
+            "source-layer": "vaylat-secondary",
+            "type": "line"
+        },
+        {
+            "id": "Vaylat dashed",
+            "layout": {},
+            "minzoom": 8,
+            "paint": {
+                "line-color": "hsl(0, 0%, 33%)",
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    14,
+                    [
+                        "literal",
+                        [
+                            3,
+                            3
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            3,
+                            3
+                        ]
+                    ]
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    7,
+                    0.4,
+                    10,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    6,
+                    1,
+                    10,
+                    2
+                ]
+            },
+            "source": "composite",
+            "source-layer": "vaylat-dashed",
+            "type": "line"
+        },
+        {
+            "id": "Vaylat text primary",
+            "layout": {
+                "symbol-avoid-edges": true,
+                "symbol-placement": "line-center",
+                "text-field": [
+                    "to-string",
+                    [
+                        "get",
+                        "kulkusyv1"
+                    ]
+                ],
+                "text-padding": 5,
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    11,
+                    10,
+                    18,
+                    32
+                ]
+            },
+            "minzoom": 10,
+            "paint": {
+                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-halo-width": 15
+            },
+            "source": "composite",
+            "source-layer": "vaylat-primary",
+            "type": "symbol"
+        },
+        {
+            "id": "Vaylat text secondary",
+            "layout": {
+                "symbol-avoid-edges": true,
+                "symbol-placement": "line-center",
+                "text-field": [
+                    "to-string",
+                    [
+                        "get",
+                        "kulkusyv1"
+                    ]
+                ],
+                "text-padding": 5,
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    11,
+                    10,
+                    18,
+                    32
+                ]
+            },
+            "minzoom": 11,
+            "paint": {
+                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-halo-width": 15
+            },
+            "source": "composite",
+            "source-layer": "vaylat-secondary",
+            "type": "symbol"
+        },
+        {
+            "id": "Vaylat text dashed",
+            "layout": {
+                "symbol-avoid-edges": true,
+                "symbol-placement": "line-center",
+                "text-field": [
+                    "to-string",
+                    [
+                        "get",
+                        "kulkusyv1"
+                    ]
+                ],
+                "text-padding": 5,
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    11,
+                    10,
+                    18,
+                    32
+                ]
+            },
+            "minzoom": 12,
+            "paint": {
+                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-halo-width": 15
+            },
+            "source": "composite",
+            "source-layer": "vaylat-dashed",
+            "type": "symbol"
+        },
+        {
+            "id": "taululinjat",
+            "layout": {},
+            "minzoom": 1,
+            "paint": {
+                "line-color": "hsl(0, 0%, 0%)",
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            5,
+                            4
+                        ]
+                    ],
+                    10,
+                    [
+                        "literal",
+                        [
+                            5,
+                            4
+                        ]
+                    ],
+                    14,
+                    [
+                        "literal",
+                        [
+                            24,
+                            16
+                        ]
+                    ]
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    7,
+                    0.4,
+                    10,
+                    1
+                ]
+            },
+            "source": "composite",
+            "source-layer": "taululinja",
+            "type": "line"
+        },
+        {
+            "id": "paikannimi",
+            "layout": {
+                "text-field": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "case",
+                        [
+                            ">=",
+                            [
+                                "get",
+                                "kirjasinkoko"
+                            ],
+                            505
+                        ],
+                        [
+                            "coalesce",
+                            [
+                                "get",
+                                "teksti_fin"
+                            ],
+                            [
+                                "get",
+                                "teksti_swe"
+                            ]
+                        ],
+                        ""
+                    ],
+                    9,
+                    [
+                        "case",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "kirjasinkoko"
+                            ],
+                            330
+                        ],
+                        [
+                            "coalesce",
+                            [
+                                "get",
+                                "teksti_fin"
+                            ],
+                            [
+                                "get",
+                                "teksti_swe"
+                            ]
+                        ],
+                        ""
+                    ],
+                    10,
+                    [
+                        "case",
+                        [
+                            ">=",
+                            [
+                                "get",
+                                "kirjasinkoko"
+                            ],
+                            295
+                        ],
+                        [
+                            "coalesce",
+                            [
+                                "get",
+                                "teksti_fin"
+                            ],
+                            [
+                                "get",
+                                "teksti_swe"
+                            ]
+                        ],
+                        ""
+                    ],
+                    11,
+                    [
+                        "case",
+                        [
+                            ">=",
+                            [
+                                "get",
+                                "kirjasinkoko"
+                            ],
+                            200
+                        ],
+                        [
+                            "coalesce",
+                            [
+                                "get",
+                                "teksti_fin"
+                            ],
+                            [
+                                "get",
+                                "teksti_swe"
+                            ]
+                        ],
+                        ""
+                    ],
+                    12,
+                    [
+                        "case",
+                        [
+                            ">=",
+                            [
+                                "get",
+                                "kirjasinkoko"
+                            ],
+                            160
+                        ],
+                        [
+                            "coalesce",
+                            [
+                                "get",
+                                "teksti_fin"
+                            ],
+                            [
+                                "get",
+                                "teksti_swe"
+                            ]
+                        ],
+                        ""
+                    ]
+                ],
+                "text-padding": 10,
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    0,
+                    [
+                        "interpolate",
+                        [
+                            "linear"
+                        ],
+                        [
+                            "get",
+                            "kirjasinkoko"
+                        ],
+                        300,
+                        16,
+                        570,
+                        28
+                    ],
+                    9,
+                    [
+                        "interpolate",
+                        [
+                            "linear"
+                        ],
+                        [
+                            "get",
+                            "kirjasinkoko"
+                        ],
+                        160,
+                        12,
+                        570,
+                        20
+                    ],
+                    11,
+                    [
+                        "interpolate",
+                        [
+                            "linear"
+                        ],
+                        [
+                            "get",
+                            "kirjasinkoko"
+                        ],
+                        160,
+                        10,
+                        570,
+                        32
+                    ]
+                ]
+            },
+            "minzoom": 1,
+            "paint": {},
+            "source": "composite",
+            "source-layer": "paikannimi",
+            "type": "symbol"
+        }
+    ],
+    "light": {
+        "anchor": "viewport",
+        "color": "hsl(0, 0%, 100%)"
+    },
+    "metadata": {
+        "mapbox:autocomposite": true,
+        "mapbox:groups": {},
+        "mapbox:sdk-support": {
+            "android": "latest",
+            "ios": "latest",
+            "js": "latest"
+        },
+        "mapbox:trackposition": false,
+        "mapbox:type": "template",
+        "mapbox:uiParadigm": "layers"
+    },
+    "modified": "2020-02-23T19:22:15.961Z",
+    "name": "Merikartta",
+    "owner": "vokkim",
+    "pitch": 1,
+    "sources": {
+        "composite": {
+            "type": "vector",
+            "url": "mbtiles://map.mbtiles"
+        }
+    },
+    "sprite": "/sprite",
+    "version": 8,
+    "visibility": "private",
+    "zoom": 7.102577286392973
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="41px" viewBox="0 0 14 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 21</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-21">
+            <g id="Group-6">
+                <g id="Group-4">
+                    <path d="M0.5,29.5 L3,29.5" id="Line-8" stroke="#000000" stroke-linecap="square"></path>
+                    <path d="M6.5,29.5 L8.5,29.5" id="Line-8" stroke="#000000" stroke-linecap="square"></path>
+                    <polygon id="Triangle" fill="#000000" points="4.5 0 8 6 1 6"></polygon>
+                    <polygon id="Triangle" fill="#000000" transform="translate(4.500000, 11.000000) rotate(-180.000000) translate(-4.500000, -11.000000) " points="4.5 8 8 14 1 14"></polygon>
+                    <circle id="Oval" stroke="#000000" cx="4.5" cy="29.5" r="1.5"></circle>
+                    <path d="M4.5,4.5 L4.5,27.5" id="Line-7" stroke="#000000" stroke-linecap="square"></path>
+                </g>
+                <path d="M4,31 L7.74753125,39.1386606 C9.0522729,40.1490522 10.3286935,40.2705162 11.5767931,39.5030526 C12.8248927,38.735589 13.2520896,37.6437688 12.8583836,36.2275919 L4,31 Z" id="Path" stroke="#000000" fill="#FED426"></path>
+            </g>
+            <polygon id="Rectangle" fill="#000000" points="2 18 7 18 7 29.5 4.5 28 2 29.5"></polygon>
+        </g>
+    </g>
+</svg>

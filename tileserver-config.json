@@ -1,0 +1,32 @@
+{
+  "options": {
+    "paths": {
+      "root": "",
+      "fonts": "assets",
+      "sprites": "assets",
+      "styles": "client",
+      "mbtiles": "output"
+    },
+    "maxScaleFactor": 3,
+    "maxSize": 2048,
+    "pbfAlias": "pbf",
+    "serveAllFonts": false,
+    "serveAllStyles": false,
+    "serveStaticMaps": true,
+    "tileMargin": 0
+  },
+  "styles": {
+    "basic": {
+      "style": "merikartta.json",
+      "tilejson": {
+        "format": "png",
+        "bounds": [23.411, 59.731, 26.850, 60.562]
+      }
+    }
+  },
+  "data": {
+    "vectortest": {
+      "mbtiles": "map.mbtiles"
+    }
+  }
+}

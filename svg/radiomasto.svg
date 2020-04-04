@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="31px" viewBox="0 0 15 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 39</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-39" transform="translate(0.888027, 0.454024)" stroke="#000000">
+            <g id="Group-4" transform="translate(2.111973, 26.545976)">
+                <path d="M0.5,1.5 L3,1.5" id="Line-8" stroke-linecap="square"></path>
+                <path d="M6.5,1.5 L8.5,1.5" id="Line-8" stroke-linecap="square"></path>
+                <circle id="Oval" cx="4.5" cy="1.5" r="1.5"></circle>
+            </g>
+            <polyline id="Path-3" stroke-linecap="square" stroke-linejoin="round" points="4.58803796 27.7904239 6.61197328 9.59329076 8.61197328 27.7904239"></polyline>
+            <g id="Group-38" transform="translate(0.000000, 0.000000)" stroke-linecap="square">
+                <path d="M4.11197328,2.045976 C2.90992677,3.52732281 2.30890351,5.01966014 2.30890351,6.522988 C2.30890351,8.02631586 2.90992677,9.51865319 4.11197328,11" id="Line-10"></path>
+                <path d="M2.61780703,0 C0.872602343,2.15070995 -2.55018276e-14,4.31737662 -2.55351296e-14,6.5 C-2.55351296e-14,8.68262338 0.872602343,10.8492901 2.61780703,13" id="Line-10"></path>
+            </g>
+            <g id="Group-38" transform="translate(10.611973, 6.500000) scale(-1, 1) translate(-10.611973, -6.500000) translate(8.111973, 0.000000)" stroke-linecap="square">
+                <path d="M4.11197328,2.045976 C2.90992677,3.52732281 2.30890351,5.01966014 2.30890351,6.522988 C2.30890351,8.02631586 2.90992677,9.51865319 4.11197328,11" id="Line-10"></path>
+                <path d="M2.61780703,0 C0.872602343,2.15070995 -2.55018276e-14,4.31737662 -2.55351296e-14,6.5 C-2.55351296e-14,8.68262338 0.872602343,10.8492901 2.61780703,13" id="Line-10"></path>
+            </g>
+        </g>
+    </g>
+</svg>
