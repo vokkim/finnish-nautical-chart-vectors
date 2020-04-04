@@ -1,7 +1,7 @@
 
 # Vectorized Finnish Nautical Charts - Merikartat
 
-![](preview.png)
+<img src="https://raw.githubusercontent.com/vokkim/finnish-nautical-chart-vectors/master/preview.png" width=300>
 
 Generate Finnish nautical charts in [Mapbox vector tile](https://docs.mapbox.com/vector-tiles/reference/) format or rasterize your custom PNG tiles. 
 
