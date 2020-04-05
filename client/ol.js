@@ -16,7 +16,7 @@ const layer = new VectorTileLayer({
   declutter: false,
   source: new VectorTileSource({
     format: new MVT(),
-    url: 'http://localhost:3000/map/mylayer/{z}/{x}/{y}/tile.mvt'
+    url: `${window.location.origin}/map/mylayer/{z}/{x}/{y}/tile.mvt`
   })
 })
 
