@@ -4,7 +4,7 @@
   Convert selected Väylä navigational data CSV files into GeoJSON.
 */
 
-const csv = require('fast-csv')
+const Papa = require('papaparse')
 const fs = require('fs')
 const path = require('path')
 const GeoJSON = require('geojson')
@@ -162,7 +162,7 @@ function generator(dataset) {
     let count = 0
     let lastPrint = Date.now()
     const readStream = fs.createReadStream(path.join(DATA_BASE_PATH, dataset.input))
-      .pipe(csv.parse({ headers: true }))
+      .pipe(Papa.parse(Papa.NODE_STREAM_INPUT, {header: true}))
       .pipe(new Transform({
         objectMode: true,
         transform(row, encoding, callback) {
