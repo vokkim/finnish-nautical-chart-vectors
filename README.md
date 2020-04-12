@@ -52,9 +52,9 @@ Data set is quite big, nearly 1.5 GB.
 
 #### Convert Väylä data into GeoJSON
 
-Run `node --max-old-space-size=8192 import/convert-csv-to-geojson.js`
+Run `node import/convert-csv-to-geojson.js`
 
-This can take an hour to run, the script is highly unoptimized for large datasets such as `syvyysalue.csv` and `syvyyskayra.csv`.
+This should take some minutes.
 
 #### Fetch Maanmittauslaitos data (GeoJSON)
 
