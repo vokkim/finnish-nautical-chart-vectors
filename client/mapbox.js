@@ -17,7 +17,7 @@ map.on('zoomend', (z) => zoomDiv.innerText = map.getZoom().toFixed(1))
 map.on('load', () => {
   map.addSource('composite', {
     type: 'vector',
-    tiles: ['http://localhost:3000/map/mylayer/{z}/{x}/{y}/tile.mvt'],
+    tiles: [`${window.location.origin}/map/mylayer/{z}/{x}/{y}/tile.mvt`],
     minzoom: 1
   })
   for (const layer of layers) {
