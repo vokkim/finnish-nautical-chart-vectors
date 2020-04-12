@@ -8,6 +8,8 @@ const csv = require('fast-csv')
 const fs = require('fs')
 const path = require('path')
 const GeoJSON = require('geojson')
+const { Transform } = require('stream')
+
 const {
   TY_JNR,
   NAVL_TYYP,
@@ -74,30 +76,19 @@ function composeTurvalaitteetProps(value) {
   return {type: [type, naviType, buildingType, subtype, light].join('-')}
 }
 
-function createGeoJSON(dataset, rows) {
-  const result = GeoJSON.parse(rows, {
+function createGeoJSONString(row) {
+  return JSON.stringify(GeoJSON.parse(row, {
     Point: ['lat', 'lon'],
     LineString: 'line',
     MultiLineString: 'multiLine',
     Polygon: 'polygon',
     MultiPolygon: 'multiPolygon'
-  })
-  fs.writeFileSync(path.join(DATA_BASE_PATH, dataset.output), JSON.stringify(result))
-  console.log(`${dataset.input}: finished ${dataset.output}!`)
+  }))
 }
 
 function generator(dataset) {
-  // Ugly mutate
-  let rows = []
-
-  function addRow(row) {
+  function mapRow(row) {
     let resultRow = {}
-    if (rows.length % 10000 === 0 && rows.length > 0) {
-      console.log(`${dataset.input}: processing row ${rows.length}`)
-    }
-    if (dataset.filter && !dataset.filter(row)) {
-      return
-    }
     try {
       if (row.SHAPE.indexOf('POINT') === 0) {
         const latlon = row.SHAPE.substring(7, row.SHAPE.length-1).split(' ').map(Number)
@@ -155,7 +146,7 @@ function generator(dataset) {
         resultRow[propKey] = row[propKey]
       })
     }
-    rows.push(resultRow)
+    return resultRow
   }
 
   function flipPolygonValues(polygonArray) {
@@ -168,16 +159,34 @@ function generator(dataset) {
 
   function run() {
     console.log(`Processing ${dataset.input}`)
-    fs.createReadStream(path.join(DATA_BASE_PATH, dataset.input))
+    let count = 0
+    let lastPrint = Date.now()
+    const readStream = fs.createReadStream(path.join(DATA_BASE_PATH, dataset.input))
       .pipe(csv.parse({ headers: true }))
-      .on('error', error => console.error(error))
-      .on('data', row => {
-        addRow(row, dataset)
-      })
-      .on('end', rowCount => {
-        console.log(`${dataset.input}: parsed total ${rowCount} rows`)
-        createGeoJSON(dataset, rows)
-      })
+      .pipe(new Transform({
+        objectMode: true,
+        transform(row, encoding, callback) {
+          if (dataset.filter && !dataset.filter(row)) {
+            callback(null, '')
+          } else {
+            if (count % 10000 === 0 && count > 0) {
+              console.log(`${dataset.input}: processing row ${count}`)
+              console.log('took', Date.now() - lastPrint, 'ms')
+              lastPrint = Date.now()
+            }
+            callback(null, (count > 0 ? ',' : '') + createGeoJSONString(mapRow(row)))
+            count += 1
+          }
+        }
+      }))
+    const outputStream = fs.createWriteStream(path.join(DATA_BASE_PATH, dataset.output))
+    outputStream.write('{"type":"FeatureCollection","features":[')
+    readStream.pipe(outputStream, {end: false})
+    readStream.on('end', () => {
+      outputStream.end(']}')
+      console.log(`${dataset.input}: parsed total ${count} rows`)
+      console.log(`${dataset.input}: finished ${dataset.output}!`)
+    })
   }
 
   return run
