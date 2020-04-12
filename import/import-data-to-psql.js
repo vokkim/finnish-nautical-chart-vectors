@@ -5,7 +5,8 @@ const shell = require('shelljs')
 
 const dbConfig = {
   db: 'merikartta',
-  user: 'postgres'
+  user: 'docker',
+  password: 'chartpostgis'
 }
 
 const dataPath = path.resolve(__dirname, '../data')
@@ -31,7 +32,7 @@ const data = [
 
 for (const [table, file] of data) {
   console.log(`Importing "${file}" into table "${table}"`)
-  shell.exec(`docker run --network host --env OGR_GEOJSON_MAX_OBJ_SIZE=1000 --rm -v ${dataPath}:/data osgeo/gdal:alpine-normal-latest ogr2ogr -f "PostgreSQL" PG:"host=host.docker.internal dbname=${dbConfig.db} user=${dbConfig.user}" "/data/${file}" -nln ${table}`)
+  shell.exec(`docker run --network host --env OGR_GEOJSON_MAX_OBJ_SIZE=1000 --rm -v ${dataPath}:/data osgeo/gdal:alpine-normal-latest ogr2ogr -f "PostgreSQL" PG:"host=host.docker.internal dbname=${dbConfig.db} user=${dbConfig.user} password=${dbConfig.password}" "/data/${file}" -nln ${table}`)
 }
 
 console.log('Done!')

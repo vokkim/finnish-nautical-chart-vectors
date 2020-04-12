@@ -31,7 +31,9 @@
   "scripts": {
     "start": "node server/index.js",
     "watch-client": "parcel client/{ol,index,mapbox}.html",
-    "tileserver": "tileserver-gl --config tileserver-config.json --no-cors"
+    "tileserver": "tileserver-gl --config tileserver-config.json --no-cors",
+    "postgis:start": "docker run -d --name postgis -p 5432:5432 -e POSTGRES_PASS=chartpostgis -e PGDATA=/var/lib/postgresql/data/pgdata -v \"$(pwd)\"/data:/var/lib/postgresql/data2 kartoza/postgis",
+    "psql": "docker exec -it postgis psql -U postgres"
   },
   "repository": {
     "type": "git",

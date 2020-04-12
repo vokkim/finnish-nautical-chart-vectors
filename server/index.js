@@ -14,7 +14,7 @@ strata.layer('mylayer').route('tile.mvt')
     layers,
     pgConfig: {
       host: 'localhost',
-      user: 'postgres',
+      user: 'docker',
       database: 'merikartta',
       port: '5432'
     }
