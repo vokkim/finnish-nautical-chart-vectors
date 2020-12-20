@@ -21,8 +21,7 @@ const layers = [
     extent: 4096,
     fields: ['typedepr', 'water'],
     buffer: 256,
-    minZoom: 6,
-    simplify: simplify(linearTolerance(12, 10, 40))
+    minZoom: 6
   },
   {
     layer: 'syvyysalueet',

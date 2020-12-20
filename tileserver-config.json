@@ -13,7 +13,7 @@
     "serveAllFonts": false,
     "serveAllStyles": false,
     "serveStaticMaps": true,
-    "tileMargin": 0
+    "tileMargin": 128
   },
   "styles": {
     "basic": {
