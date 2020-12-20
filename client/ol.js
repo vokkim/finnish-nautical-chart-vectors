@@ -2,6 +2,7 @@ import 'ol/ol.css'
 import Map from 'ol/Map'
 import View from 'ol/View'
 import MVT from 'ol/format/MVT'
+import {fromLonLat, toLonLat} from 'ol/proj'
 import VectorTileLayer from 'ol/layer/VectorTile'
 import VectorTileSource from 'ol/source/VectorTile'
 import {Fill, Icon, Stroke, Style, Text} from 'ol/style'
@@ -11,6 +12,15 @@ import merikarttaMapboxStyles from './merikartta.json'
 import spriteData from '../assets/sprite@2x.json'
 
 const zoomDiv = window.document.getElementById('zoom')
+
+function getInitialView() {
+  const hashParts = (window.location.hash || '#').substring(1).split('/').map(parseFloat)
+  if (hashParts.length === 3 && hashParts.every(v => isFinite(v))) {
+    const center = fromLonLat([hashParts[1], hashParts[0]])
+    return {center, zoom: hashParts[2]}
+  }
+  return {center: fromLonLat([22.96, 59.82]), zoom: 13}
+}
 
 const layer = new VectorTileLayer({
   declutter: false,
@@ -24,14 +34,16 @@ const map = new Map({
   layers: [],
   target: 'map',
   projection: 'EPSG:4326',
-  view: new View({
-    center: [2778615,8429230],
-    zoom: 13
-  })
+  view: new View(getInitialView())
 })
 
 map.on('moveend', (e) => {
-  zoomDiv.innerText = map.getView().getZoom().toFixed(1)
+  const view = map.getView()
+  const center = view.getCenter()
+  const [longitude, latitude] = toLonLat(center)
+  const zoom = view.getZoom().toFixed(1)
+  zoomDiv.innerText = zoom
+  window.history.pushState(null, null, `#${latitude.toFixed(4)}/${longitude.toFixed(4)}/${zoom}`)
 })
 
 const spriteImageUrl = '/assets/sprite@2x.png'

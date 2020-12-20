@@ -10,8 +10,10 @@ merikarttaMapboxStyles.layers = []
 
 const map = new mapboxgl.Map({
   container: 'map',
+  hash: true,
   style: merikarttaMapboxStyles
 })
+
 const zoomDiv = window.document.getElementById('zoom')
 map.on('zoomend', (z) => zoomDiv.innerText = map.getZoom().toFixed(1))
 map.on('load', () => {
