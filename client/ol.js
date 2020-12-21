@@ -78,6 +78,6 @@ function addMerikarttaLayer() {
 map.addLayer(layer)
 addMerikarttaLayer()
 
-opacitySlider.addEventListener('input', (evt) => {
-  layer.setOpacity(opacitySlider.value / 100)
+opacitySlider.addEventListener('input', () => {
+  layer.setOpacity(parseInt(opacitySlider.value, 10) / 100)
 })

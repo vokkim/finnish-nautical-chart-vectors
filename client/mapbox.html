@@ -6,6 +6,16 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.9.0/mapbox-gl-unminified.js'></script>
   </head>
   <body>
+    <div id="top">
+      <label>
+        Merikartat
+        <input type="range" min="0" max="100" value="0" id="merikartatSlider">
+      </label>
+      <label>
+        S57
+        <input type="range" min="0" max="100" value="0" id="s57Slider">
+      </label>
+    </div>
     <div id="map" class="map"></div>
     <div id="zoom" class="zoom"></div>
     <script src="mapbox.js"></script>
