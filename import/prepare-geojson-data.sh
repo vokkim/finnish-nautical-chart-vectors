@@ -22,4 +22,14 @@ node_modules/mapshaper/bin/mapshaper -i data/taululinja.geojson -erase source=da
 node_modules/mapshaper/bin/mapshaper -i data/paikannimi.geojson -clip source=data/map-area-mask.geojson -o data/paikannimi-clipped.geojson
 
 # Vesikivi (clip only relevant map area)
-node_modules/mapshaper/bin/mapshaper -i data/vesikivi.geojson -clip source=data/map-area-mask.geojson -o data/vesikivi-clipped.geojson
+node_modules/mapshaper/bin/mapshaper -i data/vesikivi.geojson -clip source=data/syvyysalue.geojson -o data/vesikivi-clipped.geojson
+
+# Masto (clip only relevant map area)
+node_modules/mapshaper/bin/mapshaper -i data/masto.geojson -clip source=data/map-area-mask.geojson -o data/masto-clipped.geojson
+
+# Maastokuovion reuna
+node_modules/mapshaper/bin/mapshaper -i data/maastokuvionreuna.geojson -filter invert 'kohdeluokka === 30999' -o data/maastokuvionreuna-filtered.geojson
+
+
+
+node_modules/mapshaper/bin/mapshaper -i data/syvyysalue.geojson -filter '["3","6","10"].includes(MAXDEPTH)' -drop fields=MAXDEPTH -each 'WATER="blue"' -o 'data/syvyysalueet-dissolved-blue.geojson'

@@ -187,6 +187,14 @@ const layers = [
     minZoom: 12
   },
   {
+    layer: 'masto',
+    table: 'masto',
+    extent: 256,
+    fields: [],
+    buffer: 10,
+    minZoom: 11
+  },
+  {
     layer: 'ankkuripaikka',
     table: 'ankkuripaikka',
     extent: 256,

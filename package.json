@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "watch-client": "parcel client/{ol,index,mapbox}.html",
+    "watch": "parcel client/{ol,index,mapbox}.html & node server/index.js",
     "tileserver": "tileserver-gl --config tileserver-config.json --no-cors"
   },
   "repository": {

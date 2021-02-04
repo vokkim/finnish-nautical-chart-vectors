@@ -79,13 +79,10 @@ Run `import/import-data-to-psql.js`
 
 Build and watch preview client files using [Parcel](https://parceljs.org/): 
 
-`npm run watch-client`
-
-Start the tile and preview server: 
-
-`npm run start`
+`npm run watch`
 
 Open http://localhost:3000/
+
 
 ## Generate vector MBTiles
 

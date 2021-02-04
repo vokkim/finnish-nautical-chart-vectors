@@ -13,18 +13,29 @@ const axios = require('axios')
 const _ = require('lodash')
 const {kohdeluokkaToType} = require('./enums')
 
+const API_KEY = process.env['API_KEY'] || ''
+const SELECTED_APIS = process.argv.slice(2).map(_.trim).map(_.toLower)
+
 const apis = [
   {
+    name: 'masto',
+    filename: 'data/masto.geojson',
+    url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/masto/items?f=json',
+    properties: ['kohdeluokka'],
+  },
+  {
+    name: 'vesikivi',
     filename: 'data/vesikivi.geojson',
-    url: 'https://beta-paikkatieto.maanmittauslaitos.fi/maastotiedot/wfs3/v1/collections/vesikivi/items?f=json',
+    url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/vesikivi/items?f=json',
     properties: ['kohdeluokka']
   },
   {
+    name: 'hylky',
     filename: 'data/hylky.geojson',
-    url: 'https://beta-paikkatieto.maanmittauslaitos.fi/maastotiedot/wfs3/v1/collections/hylky/items?f=json',
+    url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/hylky/items?f=json',
     properties: ['kohdeluokka', 'teksti', 'mtk_id'],
     mergeWith: {
-      url: 'https://beta-paikkatieto.maanmittauslaitos.fi/maastotiedot/wfs3/v1/collections/hylynsyvyys/items?f=json',
+      url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/hylynsyvyys/items?f=json',
       parentReferenceId: 'hylkyviittaus',
       properties: ['teksti', 'hylkyviittaus']
     },
@@ -45,20 +56,23 @@ const apis = [
     }
   },
   {
+    name: 'ankkuripaikka',
     filename: 'data/ankkuripaikka.geojson',
-    url: 'https://beta-paikkatieto.maanmittauslaitos.fi/maastotiedot/wfs3/v1/collections/ankkuripaikka/items?f=json',
+    url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/ankkuripaikka/items?f=json',
     properties: []
   },
-  /*{
+  {
+    name: 'korkeuskayra',
     filename: 'data/korkeuskayra.geojson',
-    url: 'https://beta-paikkatieto.maanmittauslaitos.fi/maastotiedot/wfs3/v1/collections/korkeuskayra/items?f=json',
+    url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/korkeuskayra/items?f=json',
     properties: ['korkeuskayrankorkeusarvotviittaus', 'korkeusarvo'],
     filter: (row) => row.properties.korkeusarvo <= 1000,
     autosave: true
-  },*/
+  },
   {
+    name: 'paikannimi',
     filename: 'data/paikannimi.geojson',
-    url: 'https://beta-paikkatieto.maanmittauslaitos.fi/maastotiedot/wfs3/v1/collections/paikannimi/items?f=json&kohdeluokka=48112,48111,48120,36490,35070,35060,16101',
+    url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/paikannimi/items?f=json&kohdeluokka=48112,48111,48120,36490,35070,35060,16101',
     properties: ['teksti', 'kohdeluokka', 'sijainti_piste', 'kirjasinkoko', 'kielikoodi', 'kirjasinvarikoodi'],
     processResult: (data) => {
       const featuresWithProperLocation = data.features.map(feature => {
@@ -99,7 +113,7 @@ function generator(api) {
   let result = null
 
   async function fetchGeoJSONData(url, api = {}) {
-    const response = await axios.get(url)
+    const response = await axios.get(url + `&api-key=${API_KEY}`)
     const nextUrl = response.data.links.length === 2 ? response.data.links[1].href : null
     delete response.data.links
     delete response.data.numberReturned
@@ -185,4 +199,14 @@ function generator(api) {
   return run
 }
 
-apis.map(generator).forEach(run => run())
+if (SELECTED_APIS.length === 0 || API_KEY.length === 0) {
+  console.log('Usage: API_KEY=key node import/fetch-geojson-from-mml.js [api name | all]')
+  process.exit(0)
+}
+
+apis.filter(api => {
+  if (SELECTED_APIS.includes('all')) {
+    return true
+  }
+  return SELECTED_APIS.includes(api.name)
+}).map(generator).forEach(run => run())

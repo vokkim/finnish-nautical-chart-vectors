@@ -2,6 +2,9 @@
 
 const path = require('path')
 const shell = require('shelljs')
+const _ = require('lodash')
+
+const SELECTED_DATA = process.argv.slice(2).map(_.trim).map(_.toLower)
 
 const dbConfig = {
   db: 'merikartta',
@@ -26,12 +29,21 @@ const data = [
   ['ankkuripaikka', 'ankkuripaikka.geojson'],
   ['hylky', 'hylky.geojson'],
   ['rantarakenteet', 'rantarakenteet.geojson'],
-  ['turvalaitteet', 'turvalaitteet.geojson']
+  ['turvalaitteet', 'turvalaitteet.geojson'],
+  ['masto', 'masto-clipped.geojson']
 ]
 
+if (SELECTED_DATA.length === 0) {
+  console.log('Usage: node import/import-data-to-psql.js [data | all] [data] ...')
+  process.exit(0)
+}
+
+
 for (const [table, file] of data) {
-  console.log(`Importing "${file}" into table "${table}"`)
-  shell.exec(`docker run --network host --env OGR_GEOJSON_MAX_OBJ_SIZE=1000 --env PG_USE_COPY=YES --rm -v ${dataPath}:/data osgeo/gdal:alpine-normal-latest ogr2ogr -f "PostgreSQL" PG:"host=host.docker.internal dbname=${dbConfig.db} user=${dbConfig.user}" "/data/${file}" -nln ${table}`)
+  if (SELECTED_DATA.includes('all') || SELECTED_DATA.includes(table)) {
+    console.log(`Importing "${file}" into table "${table}"`)
+    shell.exec(`docker run --network host --env OGR_GEOJSON_MAX_OBJ_SIZE=1000 --env PG_USE_COPY=YES --rm -v ${dataPath}:/data osgeo/gdal:alpine-normal-latest ogr2ogr -f "PostgreSQL" PG:"host=host.docker.internal dbname=${dbConfig.db} user=${dbConfig.user}" "/data/${file}" -nln ${table}`)
+  }
 }
 
 console.log('Done!')
