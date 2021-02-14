@@ -36,4 +36,7 @@ curl "https://julkinen.vayla.fi/inspirepalvelu/avoin/wfs?request=GetFeature&outp
 
 curl "https://julkinen.vayla.fi/inspirepalvelu/avoin/wfs?request=GetFeature&outputFormat=csv&typeNames=avoin:vesiliikennemerkit&srsName=urn:ogc:def:crs:EPSG::4326" -o data/vesiliikennemerkit.csv
 
+# In case of errors, the downloaded files will contain an xml description of the error
+(for i in $(ls -1 data/*.csv); do grep -q Exception $i && echo ERROR downloading $i; done)
+
 echo "Done!"
