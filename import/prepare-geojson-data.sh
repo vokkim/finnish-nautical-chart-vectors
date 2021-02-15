@@ -6,8 +6,8 @@ cd $PARENT_PATH
 cd ..
 
 ## Syvyysalue: Split "blue" and "white" water into own files, merge polygons and chop features up for Mapbox/PostGIS import
-node_modules/mapshaper/bin/mapshaper -i data/syvyysalue.geojson -filter invert '["3","6","10"].includes(MAXDEPTH)' -drop fields=MAXDEPTH -split-on-grid 200,500 -dissolve2 gap-fill-area=1m2 TYPEDEPR -clean gap-fill-area=1m2 -merge-layers -each 'WATER="white"' -o 'data/syvyysalueet-dissolved-white.geojson'
-node_modules/mapshaper/bin/mapshaper -i data/syvyysalue.geojson -filter '["3","6","10"].includes(MAXDEPTH)' -drop fields=MAXDEPTH -split-on-grid 100,100 -dissolve TYPEDEPR -clean gap-fill-area=1m2 -merge-layers -each 'WATER="blue"' -explode -o 'data/syvyysalueet-dissolved-blue.geojson'
+node_modules/mapshaper/bin/mapshaper -i data/syvyysalue.geojson -filter invert '["3","6","10"].includes(DRVAL2)' -drop fields=DRVAL2 -split-on-grid 200,500 -dissolve2 gap-fill-area=1m2 DRVAL1 -clean gap-fill-area=1m2 -merge-layers -each 'WATER="white"' -o 'data/syvyysalueet-dissolved-white.geojson'
+node_modules/mapshaper/bin/mapshaper -i data/syvyysalue.geojson -filter '["3","6","10"].includes(DRVAL2)' -drop fields=DRVAL2 -split-on-grid 100,100 -dissolve DRVAL1 -clean gap-fill-area=1m2 -merge-layers -each 'WATER="blue"' -explode -o 'data/syvyysalueet-dissolved-blue.geojson'
 
 ## Syvyysalue: create flattened and heavily simplified file
 node_modules/mapshaper/bin/mapshaper -i data/syvyysalue.geojson -drop fields=* -dissolve2 gap-fill-area=100m2 -explode -simplify 1% -o geojson-type=FeatureCollection data/syvyysalueet-simplified.geojson
@@ -32,4 +32,4 @@ node_modules/mapshaper/bin/mapshaper -i data/maastokuvionreuna.geojson -filter i
 
 
 
-node_modules/mapshaper/bin/mapshaper -i data/syvyysalue.geojson -filter '["3","6","10"].includes(MAXDEPTH)' -drop fields=MAXDEPTH -each 'WATER="blue"' -o 'data/syvyysalueet-dissolved-blue.geojson'
+node_modules/mapshaper/bin/mapshaper -i data/syvyysalue.geojson -filter '["3","6","10"].includes(DRVAL2)' -drop fields=DRVAL2 -each 'WATER="blue"' -o 'data/syvyysalueet-dissolved-blue.geojson'
