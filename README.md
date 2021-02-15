@@ -23,6 +23,7 @@ Contains data from the National Land Survey of Finland Topographic Database 04/2
 
 * Install Docker
 * Install PostGIS
+* Install NodeJS 10.x (mapbox-gl-native does not exist for newer nodejs versions: https://github.com/mapbox/mapbox-gl-native/issues/16485)
 * Run `npm install`
 
 ## Get the data
