@@ -24,6 +24,12 @@ const apis = [
     properties: ['kohdeluokka'],
   },
   {
+    name: 'maastokuvionreuna',
+    filename: 'data/maastokuvionreuna.geojson',
+    url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/maastokuvionreuna/items?f=json',
+    properties: ['kohdeluokka'],
+  },
+  {
     name: 'vesikivi',
     filename: 'data/vesikivi.geojson',
     url: 'https://avoin-paikkatieto.maanmittauslaitos.fi/maastotiedot/features/v1/collections/vesikivi/items?f=json',
