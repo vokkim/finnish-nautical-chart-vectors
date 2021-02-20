@@ -20,7 +20,7 @@ const DATA_BASE_PATH = path.resolve(path.join(__dirname, '../data/'))
 
 const datasets = [
   {
-    propsToCopy: ['DEPTH', 'TYPESOUND'],
+    propsToCopy: ['DEPTH', 'QUASOU'],
     input: 'syvyyspiste.csv',
     output: 'syvyyspiste.geojson'
   },
@@ -45,7 +45,7 @@ const datasets = [
     output: 'syvyyskayra.geojson'
   },
   {
-    propsToCopy: ['TYPEDEPR', 'MAXDEPTH'],
+    propsToCopy: ['DRVAL1', 'DRVAL2'],
     input: 'syvyysalue.csv',
     output: 'syvyysalue.geojson'
   },
@@ -89,34 +89,38 @@ function createGeoJSONString(row) {
 function generator(dataset) {
   function mapRow(row) {
     let resultRow = {}
+
+    // The column name depends on if the dataset is from vayla.fi (SHAPE) or traficom.fi (GEOM)
+    let shape_row = (row.SHAPE === undefined) ? row.GEOM : row.SHAPE
+
     try {
-      if (row.SHAPE.indexOf('POINT') === 0) {
-        const latlon = row.SHAPE.substring(7, row.SHAPE.length-1).split(' ').map(Number)
+      if (shape_row.indexOf('POINT') === 0) {
+        const latlon = shape_row.substring(7, shape_row.length-1).split(' ').map(Number)
         resultRow.lat = latlon[0]
         resultRow.lon = latlon[1]
-      } else if (row.SHAPE.indexOf('LINESTRING') === 0) {
+      } else if (shape_row.indexOf('LINESTRING') === 0) {
         resultRow.line = flipLineStringValues(JSON.parse(
-          row.SHAPE
-            .substring(11, row.SHAPE.length)
+          shape_row
+            .substring(11, shape_row.length)
             .replace(/\(/g, '[[')
             .replace(/\)/g, ']]')
             .replace(/,\s/g, '],[')
             .replace(/\s/g, ',')
         ))
-      } else if (row.SHAPE.indexOf('MULTILINESTRING') === 0) {
+      } else if (shape_row.indexOf('MULTILINESTRING') === 0) {
         resultRow.multiLine = JSON.parse(
-          row.SHAPE
-            .substring(16, row.SHAPE.length)
+          shape_row
+            .substring(16, shape_row.length)
             .replace(/\)\, \(/g, ']],[[')
             .replace(/\(\(/g, '[[[')
             .replace(/\)\)/g, ']]]')
             .replace(/,\s/g, '],[')
             .replace(/\s/g, ',')
         ).map(flipLineStringValues)
-      } else if (row.SHAPE.indexOf('MULTIPOLYGON') === 0) {
+      } else if (shape_row.indexOf('MULTIPOLYGON') === 0) {
           resultRow.multiPolygon = JSON.parse(
-            row.SHAPE
-              .substring(13, row.SHAPE.length)
+            shape_row
+              .substring(13, shape_row.length)
               .replace(/\)\)\, \(\(/g, ']]],[[[')
               .replace(/\)\, \(/g, ']],[[')
               .replace(/\(\(\(/g, '[[[[')
@@ -124,19 +128,21 @@ function generator(dataset) {
               .replace(/,\s/g, '],[')
               .replace(/\s/g, ',')
           ).map(flipPolygonValues)
-      } else if (row.SHAPE.indexOf('POLYGON') === 0) {
+      } else if (shape_row.indexOf('POLYGON') === 0) {
           resultRow.polygon = flipPolygonValues(JSON.parse(
-            row.SHAPE
-              .substring(8, row.SHAPE.length)
+            shape_row
+              .substring(8, shape_row.length)
               .replace(/\(\(/g, '[[[')
               .replace(/\)\)/g, ']]]')
               .replace(/,\s/g, '],[')
               .replace(/\s/g, ',')
+              .replace(/\)/g, ']') // Dirty patch for something like:  24.090503100010555)],[(62.0311209
+              .replace(/\(/g, '[')
           ))
       }
     } catch(e) {
       console.error(e)
-      console.log('SHAPE:', row.SHAPE)
+      console.log('SHAPE:', shape_row, 'in:', dataset.input)
       return
     }
     if (typeof dataset.propsToCopy === 'function') {

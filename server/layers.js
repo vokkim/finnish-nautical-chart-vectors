@@ -19,7 +19,7 @@ const layers = [
     layer: 'syvyysalueet',
     table: 'syvyysalueet',
     extent: 4096,
-    fields: ['typedepr', 'water'],
+    fields: ['drval1', 'water'],
     buffer: 256,
     minZoom: 6
   },
@@ -105,7 +105,7 @@ const layers = [
     layer: 'syvyyspiste',
     table: 'syvyyspiste',
     extent: 1024,
-    fields: ['depth::float', 'typesound::int'],
+    fields: ['depth::float', 'quasou::int'],
     buffer: 30,
     minZoom: 13
   },
