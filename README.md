@@ -5,7 +5,11 @@
 
 Generate Finnish nautical charts in [Mapbox vector tile](https://docs.mapbox.com/vector-tiles/reference/) format or rasterize your custom PNG tiles. 
 
-*Scripts and chart styles are very much in progress and the charts produced are missing relevant information!**
+
+#### Please read [Github issue #17](https://github.com/vokkim/finnish-nautical-chart-vectors/issues/17) for more information on problematic data and S-57 differences!
+
+*Scripts and chart style progress is very much stalled and the charts produced are missing relevant information!*
+
 
 * [Hydrographic data (Finnish Transport Agency)](https://vayla.fi/avoindata/kehittajille)
 ```
